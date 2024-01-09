@@ -3,7 +3,10 @@ chucknorris() {
 	wget -q https://api.chucknorris.io/jokes/random/ && cat index.html | sed "s/,/\n/g" | grep "value" | sed "s/:/\n/g" | sed "s/\"//g" | sed "s/}//g" | grep "C" && rm index.html
 	cd -
 }
+chucktag() {
+	echo "<$1>$2</$1>\n"
+}
 webnorris() {
-	echo "<p>$(chucknorris | head -n 1)</p>"
+	chucktag "p" "$(chucknorris | head -n 1)"
 }
 

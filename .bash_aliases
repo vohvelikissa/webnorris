@@ -9,4 +9,13 @@ chucktag() {
 webnorris() {
 	chucktag "p" "$(chucknorris | head -n 1)"
 }
-
+chucktemplate() {
+	echo "<html>"
+	echo "<head>"
+	echo "<title>$1</title>"
+	echo "</head>"
+	echo "<body>"
+	echo "$2"
+	echo "</body>"
+	echo "</html>"
+}

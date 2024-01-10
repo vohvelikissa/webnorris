@@ -10,6 +10,9 @@ chucktag() {
 webnorris() {
 	chucktag "p" "$(chucknorris | head -n 1)"
 }
+webnorris2() {
+	~/projects/webnorris/a.out "$(webnorris)"
+}
 chucktemplate() {
 	echo "<html>"
 	echo "<head>"
@@ -19,4 +22,7 @@ chucktemplate() {
 	echo "$2"
 	echo "</body>"
 	echo "</html>"
+}
+chucktemplate2() {
+	chucktemplate "$1" "$(webnorris2)"
 }

@@ -33,3 +33,7 @@ chucktemplate() {
 chucktemplate2() {
 	chucktemplate "$1" "$(webnorris2)"
 }
+chucktovim() {
+	chucktemplate2 $1 > "$(date -I)$1.html"
+	vim "$(date -I)$1.html"
+}
